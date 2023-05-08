@@ -58,6 +58,7 @@ function App() {
         <div>You are signed out</div>
         <div>
           <SignIn />
+          <Example />
         </div>
       </SignedOut>
     </ClerkProvider>
@@ -69,12 +70,13 @@ function Example() {
   console.log(userId);
 
   // In case the user signs out while on the page.
+  getUsers(db);
+
 
   if (!isLoaded || !userId) {
     return null;
   }
 
-  getUsers(db);
 
   return (
     <div>
