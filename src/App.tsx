@@ -1,5 +1,6 @@
-import React from "react";
-import "./App.css";
+import React, { lazy, Suspense } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 import {
   ClerkProvider,
   SignIn,
@@ -16,6 +17,84 @@ import {
   Firestore,
 } from "firebase/firestore/lite";
 import { getAnalytics } from "firebase/analytics";
+
+const Login = lazy(() => import("./Pages/Login"));
+const DashboardLayout = lazy(() => import("./Pages/DashboardLayout"));
+const Overview = lazy(() => import("./Pages/Overview"));
+const Workout = lazy(() => import("./Pages/Workout"));
+const DietPlan = lazy(() => import("./Pages/DietPlan"));
+const Goals = lazy(() => import("./Pages/Goals"));
+const Schedule = lazy(() => import("./Pages/Schedule"));
+const Progress = lazy(() => import("./Pages/Progress"));
+
+const router = createBrowserRouter([
+  {
+    path: "/login",
+    element: (
+      <Suspense fallback={<div>LOADINNNNG</div>}>
+        <Login />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/",
+    element: (
+      <Suspense fallback={<div>LOADINNNNG</div>}>
+        <DashboardLayout />
+      </Suspense>
+    ),
+    children: [
+      {
+        path: "overview",
+        element: (
+          <Suspense fallback={<div>LOADINNNNG</div>}>
+            <Overview />
+          </Suspense>
+        ),
+      },
+      {
+        path: "workout",
+        element: (
+          <Suspense fallback={<div>LOADINNNNG</div>}>
+            <Workout />
+          </Suspense>
+        ),
+      },
+      {
+        path: "diet_plan",
+        element: (
+          <Suspense fallback={<div>LOADINNNNG</div>}>
+            <DietPlan />
+          </Suspense>
+        ),
+      },
+      {
+        path: "goals",
+        element: (
+          <Suspense fallback={<div>LOADINNNNG</div>}>
+            <Goals />
+          </Suspense>
+        ),
+      },
+      {
+        path: "my_schedule",
+        element: (
+          <Suspense fallback={<div>LOADINNNNG</div>}>
+            <Schedule />
+          </Suspense>
+        ),
+      },
+      {
+        path: "progress",
+        element: (
+          <Suspense fallback={<div>LOADINNNNG</div>}>
+            <Progress />
+          </Suspense>
+        ),
+      },
+    ],
+  },
+]);
 
 const firebaseConfig = {
   apiKey: "AIzaSyAwWiHikXlVEwnSsdg3Q79oSauTTzRGB2w",
@@ -37,7 +116,7 @@ const getUsers = async (db: Firestore) => {
   const userList = userSnapshot.docs.map((doc) => {
     const userData = doc.data();
     // const userId = userData.id;
-    return doc.id
+    return doc.id;
   });
   console.log("user list: ", userList);
 };
@@ -50,17 +129,7 @@ const clerkPubKey = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY;
 function App() {
   return (
     <ClerkProvider publishableKey={clerkPubKey}>
-      <SignedIn>
-        <div>You are signed in</div>
-        <Example />
-      </SignedIn>
-      <SignedOut>
-        <div>You are signed out</div>
-        <div>
-          <SignIn />
-          <Example />
-        </div>
-      </SignedOut>
+      <RouterProvider router={router} />
     </ClerkProvider>
   );
 }
@@ -72,11 +141,9 @@ function Example() {
   // In case the user signs out while on the page.
   getUsers(db);
 
-
   if (!isLoaded || !userId) {
     return null;
   }
-
 
   return (
     <div>
