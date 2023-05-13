@@ -7,22 +7,12 @@ interface Props extends HTMLAttributes<HTMLElement> {}
 
 const Nav = forwardRef<HTMLElement, Props>(
   ({ className, ...props }: Props, ref) => {
-    const [showNav, setShowNav] = useState(false);
     const location = useLocation();
     const navPath = location.pathname.split("/");
 
     return (
       <nav ref={ref} {...props} className={twMerge(className)}>
-        <button
-          className={clsx(
-            "absolute -right-full bg-slate-900 text-white text-sm p-2",
-            showNav && "hidden"
-          )}
-          onClick={() => setShowNav(!showNav)}
-        >
-          Click to open menu
-        </button>
-        <div className={clsx(!showNav && "hidden")}>
+        <div>
           <ul className="h-full flex flex-col gap-4">
             <li
               className={clsx(
@@ -79,7 +69,7 @@ const Nav = forwardRef<HTMLElement, Props>(
             </li>
           </ul>
         </div>
-        <div className={clsx(!showNav && "hidden")}>
+        <div>
           <ul className="h-full flex flex-col gap-4">
             <li className="px-4 py-3 font-semibold text-sm">Help</li>
             <li className="px-4 py-3 font-semibold text-sm">Logout</li>
