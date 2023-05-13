@@ -1,7 +1,9 @@
-import React, { HTMLAttributes, forwardRef, useState } from "react";
+import React, { HTMLAttributes, forwardRef, Suspense, lazy } from "react";
 import clsx from "clsx";
 import { Link, useLocation } from "react-router-dom";
 import { twMerge } from "tailwind-merge";
+
+const OverviewIcon = lazy(() => import("../../UI/OverviewIcon"));
 
 interface Props extends HTMLAttributes<HTMLElement> {}
 
@@ -21,6 +23,9 @@ const Nav = forwardRef<HTMLElement, Props>(
                   "bg-orange-500 text-white rounded-lg"
               )}
             >
+              <Suspense fallback={"loading overview icon"}>
+                <OverviewIcon />
+              </Suspense>
               <Link to="/overview">Overview</Link>
             </li>
             <li
