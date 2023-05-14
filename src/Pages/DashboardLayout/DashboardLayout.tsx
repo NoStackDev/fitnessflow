@@ -25,7 +25,7 @@ const DashboardLayout = (props: Props) => {
           className={clsx(
             "absolute md:relative transition-transform h-screen translate-x-0 p-6 flex flex-col justify-between bg-white text-slate-600 w-max",
             !showNav &&
-              " md:translate-x-0 duration-500 ease-in-out"
+              "-translate-x-full md:translate-x-0 duration-500 ease-in-out"
           )}
           ref={navRef}
         />

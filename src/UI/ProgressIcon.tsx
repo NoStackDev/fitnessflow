@@ -3,13 +3,13 @@ import { twMerge } from "tailwind-merge";
 
 interface Props extends React.SVGProps<SVGSVGElement> {}
 
-const WorkoutIcon = forwardRef<SVGSVGElement, Props>(
+const ProgressIcon = forwardRef<SVGSVGElement, Props>(
   ({ className, ...props }, ref) => {
     return (
       <svg
         width="24"
-        height="14"
-        viewBox="0 0 24 14"
+        height="24"
+        viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         ref={ref}
@@ -17,7 +17,15 @@ const WorkoutIcon = forwardRef<SVGSVGElement, Props>(
         {...props}
       >
         <path
-          d="M9.82 7H14.18M22.5 9.5V4.5M1.5 9.5V4.5M17.18 13C19.58 13 20.18 11.65 20.18 10V4C20.18 2.35 19.58 1 17.18 1C14.78 1 14.18 2.35 14.18 4V10C14.18 11.65 14.78 13 17.18 13ZM6.82 13C4.42 13 3.82 11.65 3.82 10V4C3.82 2.35 4.42 1 6.82 1C9.22 1 9.82 2.35 9.82 4V10C9.82 11.65 9.22 13 6.82 13Z"
+          d="M2 22H22"
+          // stroke="#475569"
+          strokeWidth="1.5"
+          strokeMiterlimit="10"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M9.75 4V22H14.25V4C14.25 2.9 13.8 2 12.45 2H11.55C10.2 2 9.75 2.9 9.75 4ZM3 10V22H7V10C7 8.9 6.6 8 5.4 8H4.6C3.4 8 3 8.9 3 10ZM17 15V22H21V15C21 13.9 20.6 13 19.4 13H18.6C17.4 13 17 13.9 17 15Z"
           // stroke="#475569"
           strokeWidth="1.5"
           strokeLinecap="round"
@@ -28,4 +36,4 @@ const WorkoutIcon = forwardRef<SVGSVGElement, Props>(
   }
 );
 
-export default WorkoutIcon;
+export default ProgressIcon;

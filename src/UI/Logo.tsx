@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, LegacyRef, forwardRef } from "react";
+import React, { forwardRef } from "react";
 import { twMerge } from "tailwind-merge";
 
 interface Props extends React.SVGProps<SVGSVGElement> {}
