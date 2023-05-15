@@ -32,7 +32,7 @@ const DashboardLayout = (props: Props) => {
         />
       </Suspense>
       <div className="w-full">
-        <Suspense>
+        <Suspense fallback={<div className="bg-white h-[92] w-full"></div>}>
           <Header
             showNav={showNav}
             setShowNav={setShowNav}

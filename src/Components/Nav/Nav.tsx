@@ -34,7 +34,7 @@ const Nav = forwardRef<HTMLElement, Props>(
               >
                 <Suspense
                   fallback={
-                    <div className="w-5 h-5 bg-slate-600 animate-pulse"></div>
+                    <div className="w-5 h-5 bg-slate-300 animate-pulse"></div>
                   }
                 >
                   <OverviewIcon
@@ -61,7 +61,7 @@ const Nav = forwardRef<HTMLElement, Props>(
               >
                 <Suspense
                   fallback={
-                    <div className="w-6 h-[14px] bg-slate-600 animate-pulse"></div>
+                    <div className="w-6 h-[14px] bg-slate-300 animate-pulse"></div>
                   }
                 >
                   <WorkoutIcon
@@ -88,7 +88,7 @@ const Nav = forwardRef<HTMLElement, Props>(
               >
                 <Suspense
                   fallback={
-                    <div className="w-6 h-6 bg-slate-600 animate-pulse"></div>
+                    <div className="w-6 h-6 bg-slate-300 animate-pulse"></div>
                   }
                 >
                   <DietIcon
@@ -114,7 +114,7 @@ const Nav = forwardRef<HTMLElement, Props>(
               >
                 <Suspense
                   fallback={
-                    <div className="w-6 h-6 bg-slate-600 animate-pulse"></div>
+                    <div className="w-6 h-6 bg-slate-300 animate-pulse"></div>
                   }
                 >
                   <GoalsIcon
@@ -141,7 +141,7 @@ const Nav = forwardRef<HTMLElement, Props>(
               >
                 <Suspense
                   fallback={
-                    <div className="w-6 h-6 bg-slate-600 animate-pulse"></div>
+                    <div className="w-6 h-6 bg-slate-300 animate-pulse"></div>
                   }
                 >
                   <ScheduleIcon
@@ -168,7 +168,7 @@ const Nav = forwardRef<HTMLElement, Props>(
               >
                 <Suspense
                   fallback={
-                    <div className="w-6 h-6 bg-slate-600 animate-pulse"></div>
+                    <div className="w-6 h-6 bg-slate-300 animate-pulse"></div>
                   }
                 >
                   <ProgressIcon
@@ -188,7 +188,7 @@ const Nav = forwardRef<HTMLElement, Props>(
             <li className="px-4 py-3 font-semibold text-sm w-full grid grid-cols-[24px_1fr] gap-4 hover:cursor-pointer">
               <Suspense
                 fallback={
-                  <div className="w-5 h-5 bg-slate-600 animate-pulse"></div>
+                  <div className="w-5 h-5 bg-slate-300 animate-pulse"></div>
                 }
               >
                 <ProgressIcon className="stroke-slate-600 self-center" />
