@@ -17,9 +17,9 @@ const Header = forwardRef<HTMLElement, Props>(
           className={clsx("md:hidden text-sm flex flex-col gap-1")}
           onClick={() => setShowNav(!showNav)}
         >
-          <div className="bg-slate-500 h-1 w-5"></div>
-          <div className="bg-slate-500 h-1 w-5"></div>
-          <div className="bg-slate-500 h-1 w-5"></div>
+          <div className="bg-slate-400 h-1 w-5"></div>
+          <div className="bg-slate-400 h-1 w-5"></div>
+          <div className="bg-slate-400 h-1 w-5"></div>
         </button>
 
         <div className="hidden md:flex md:flex-col w-max gap-1">
