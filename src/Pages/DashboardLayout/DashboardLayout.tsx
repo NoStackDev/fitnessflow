@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 import useOnClickOutside from "../../Hooks/useOnclickOutside";
 
 const Nav = lazy(() => import("../../Components/Nav"));
+const Header = lazy(() => import("../../Components/Header"));
 
 type Props = {};
 
@@ -30,17 +31,14 @@ const DashboardLayout = (props: Props) => {
           ref={navRef}
         />
       </Suspense>
-      <div>
-        <header>
-          <button
-            className={clsx("md:hidden text-sm flex flex-col gap-1")}
-            onClick={() => setShowNav(!showNav)}
-          >
-            <div className="bg-slate-500 h-1 w-5"></div>
-            <div className="bg-slate-500 h-1 w-5"></div>
-            <div className="bg-slate-500 h-1 w-5"></div>
-          </button>
-        </header>
+      <div className="w-full">
+        <Suspense>
+          <Header
+            showNav={showNav}
+            setShowNav={setShowNav}
+            className="px-4 md:px-8 py-3 md:py-6 bg-white w-full flex items-center justify-between"
+          />
+        </Suspense>
         <main>
           <Outlet />
         </main>

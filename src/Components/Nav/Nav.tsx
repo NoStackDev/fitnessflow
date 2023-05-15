@@ -44,7 +44,7 @@ const Nav = forwardRef<HTMLElement, Props>(
                     )}
                   />
                 </Suspense>
-                <div className="self-center">Overview</div>
+                <div className="self-center font-extrabold">Overview</div>
               </Link>
             </li>
 
