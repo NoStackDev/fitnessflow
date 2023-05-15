@@ -37,7 +37,7 @@ const Header = forwardRef<HTMLElement, Props>(
           <div className="absolute top-[50%] -translate-y-[50%] left-0 translate-x-2">
             <Suspense
               fallback={
-                <div className="w-6 h-6 bg-slate-500 rounded-full animate-pulse"></div>
+                <div className="w-6 h-6 bg-slate-300 rounded-full animate-pulse"></div>
               }
             >
               <SearchIcon className="stroke-slate-500" />
