@@ -3,12 +3,12 @@ import clsx from "clsx";
 import { Link, useLocation } from "react-router-dom";
 import { twMerge } from "tailwind-merge";
 
-const OverviewIcon = lazy(() => import("../../UI/OverviewIcon"));
-const WorkoutIcon = lazy(() => import("../../UI/WorkoutIcon"));
-const DietIcon = lazy(() => import("../../UI/DietIcon"));
-const GoalsIcon = lazy(() => import("../../UI/GoalsIcon"));
-const ScheduleIcon = lazy(() => import("../../UI/ScheduleIcon"));
-const ProgressIcon = lazy(() => import("../../UI/ProgressIcon"));
+const OverviewIcon = lazy(() => import("../UI/OverviewIcon"));
+const WorkoutIcon = lazy(() => import("../UI/WorkoutIcon"));
+const DietIcon = lazy(() => import("../UI/DietIcon"));
+const GoalsIcon = lazy(() => import("../UI/GoalsIcon"));
+const ScheduleIcon = lazy(() => import("../UI/ScheduleIcon"));
+const ProgressIcon = lazy(() => import("../UI/ProgressIcon"));
 
 interface Props extends HTMLAttributes<HTMLElement> {}
 

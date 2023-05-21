@@ -2,17 +2,17 @@ import clsx from "clsx";
 import React, { HTMLAttributes, Suspense, forwardRef, lazy } from "react";
 import { twMerge } from "tailwind-merge";
 
-const SearchIcon = lazy(() => import("../../UI/SearchIcon"));
+const SearchIcon = lazy(() => import("../UI/SearchIcon"));
 
-interface Props extends HTMLAttributes<HTMLElement> {
+interface Props extends HTMLAttributes<HTMLDivElement> {
   setShowNav: React.Dispatch<React.SetStateAction<boolean>>;
   showNav: boolean;
 }
 
-const Header = forwardRef<HTMLElement, Props>(
+const Topbar = forwardRef<React.ElementRef<"div">, Props>(
   ({ className, showNav, setShowNav, ...props }, ref) => {
     return (
-      <header ref={ref} className={twMerge(className)} {...props}>
+      <div ref={ref} className={twMerge(className)} {...props}>
         <button
           className={clsx("md:hidden text-sm flex flex-col gap-1")}
           onClick={() => setShowNav(!showNav)}
@@ -46,9 +46,9 @@ const Header = forwardRef<HTMLElement, Props>(
         </div>
 
         <div className="h-10 w-10 bg-slate-300 animate-pulse rounded-full"></div>
-      </header>
+      </div>
     );
   }
 );
 
-export default Header;
+export default Topbar;

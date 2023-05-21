@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 import useOnClickOutside from "../../Hooks/useOnclickOutside";
 
 const Nav = lazy(() => import("../../Components/Nav"));
-const Header = lazy(() => import("../../Components/Header"));
+const Header = lazy(() => import("../../Components/Topbar"));
 
 type Props = {};
 
@@ -24,7 +24,7 @@ const DashboardLayout = (props: Props) => {
       >
         <Nav
           className={clsx(
-            "absolute md:relative transition-transform h-screen translate-x-0 p-6 flex flex-col justify-between bg-white text-slate-600 w-max z-50",
+            "absolute md:relative transition-transform h-screen translate-x-0 p-6 flex flex-col justify-between bg-white text-slate-600 w-max z-50 border-r-2 border-r-slate-100",
             !showNav &&
               "-translate-x-full md:translate-x-0 duration-500 ease-in-out"
           )}
@@ -36,7 +36,7 @@ const DashboardLayout = (props: Props) => {
           <Header
             showNav={showNav}
             setShowNav={setShowNav}
-            className="px-4 md:px-8 py-3 md:py-6 bg-white w-full flex items-center justify-between"
+            className="px-4 md:px-8 py-3 md:py-6 bg-white w-full flex items-center justify-between drop-shadow-sm"
           />
         </Suspense>
         <main>
